@@ -1,0 +1,63 @@
+<%- include('partials/header'); -%>
+
+<!--Country Search Results-->
+
+    <section class="container">
+        <div class="country-results">
+            <div class="results-divs top-result-div" style="grid-area: country-searched;">
+                <img class="results-flag" src="<%= countryFlag %>" alt="flag">
+                <h1 class="ml-2"><%= countrySearched %> </h1><br>
+                <p class="ml-2">Population: <%= population %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: cases-today;">
+                <p>Cases Today </p>  
+                <p><%= casesToday %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: deaths-today;">
+                <p>Deaths Today</p>  
+                <p><%= deathsToday %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: recoveries-today;">
+                <p>Recoveries Today </p>
+                <p><%= recoveredToday %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: active-cases;">
+                <p>Active Cases</p>
+                <p><%= activeCases %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: critical-cases;">
+                <p>Critical Cases</p>
+                <p><%= criticalCases %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: total-cases;">
+                <p>Total Cases</p>
+                <p><%= totalCases %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: total-deaths;">
+                <p>Total Deaths</p>
+                <p><%= totalDeaths %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: total-recoveries;">
+                <p>Total Recoveries</p>
+                <p><%= totalRecovered %></p>
+            </div>
+
+            <div class="results-divs" style="grid-area: tests-done;">
+                <p>Total Tests Done</p>
+                <p><%= totalTests %></p>
+            </div>
+
+            <a class="btn btn-outline-primary my-3" href="/statistics">Go Back</a>
+
+        </div>
+    </section>
+
+<%- include('partials/footer'); -%>

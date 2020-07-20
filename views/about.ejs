@@ -1,0 +1,107 @@
+<%- include('partials/header'); -%>
+
+<main class="container about-covid">
+    <section class="covid-overview">
+            <aside style="grid-area: overview;" class="overview my-4">
+                <h2 class="">Overview</h2>
+                <p>Coronavirus disease (<abbr>COVID-19</abbr>) is an infectious disease caused by a newly discovered coronavirus. Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.</p>
+                
+                <h3>How it spreads</h3>
+                <p>The virus that causes COVID-19 is mainly transmitted through droplets generated when an infected person coughs, sneezes, or exhales. As of now, researchers know that the new coronavirus is spread through droplets released into the air when an infected person coughs or sneezes. The droplets generally do not travel more than a few feet, and they fall to the ground (or onto surfaces) in a few seconds — this is why physical distancing is effective in preventing the spread.</p>
+            </aside>
+            <aside style="grid-area: overview-img;" class="">
+                <img class="overview-img" src="images/microscopic-view-of-coronavirus-a-pathogen-that-attacks-the-tract-picture-id1200706447.jpg" alt="">
+            </aside>
+    </section>
+
+    <hr>
+
+    <section>
+        <!--Symptoms Section-->
+        <div id="symptoms">
+            <h2>Symptoms <span class="display-button1">+</span></h2>
+            <div id = "covid-symptoms" class = "display-hide">
+                <p>COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.</p>
+                <div class="symptoms-cards">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Most common symptoms</h3>
+                            <ul>
+                                <li>Fever</li>
+                                <li>Dry cough</li>
+                                <li>Tiredness</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Less common symptoms</h3>
+                        <ul>
+                            <li>Aches and pains</li>
+                            <li>Sore throat</li>
+                            <li>Diarrhoea</li>
+                            <li>Conjuctivitis</li>
+                            <li>Headache</li>
+                            <li>Loss of taste or smell</li>
+                            <li>A rash on skin, or discoloration of fingers and toes</li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Serious Symptoms</h3>
+                        <ul>
+                            <li>Difficulty breathing or shortness of breath</li>
+                            <li>Chest pain or pressure</li>
+                            <li>Loss of speech or movement</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                <p>Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health facility.</p> 
+                <p>People with mild symptoms who are otherwise healthy should manage their symptoms at home.
+                </p>    
+                <p>On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.</p>    
+            </div>
+        </div>
+
+        <hr>
+
+        <!--Prevention Section-->
+        <div id="prevention">
+            <h2>Prevention<span class="display-button2">+</span></h2>
+            <div id="covid-prevention" class="display-hide">
+                <p>Protect yourself and others around you by knowing the facts and taking appropriate precautions. Follow advice provided by your local public health agency.</p>        
+                <ul class="list-group">
+                    <li class="list-group-item"><i class="fas fa-hands-wash fa-2x m-2"></i>Clean your hands</strong> often. Use soap and water, or an alcohol-based hand rub.</li>
+                    <li class="list-group-item"><i class="fas fa-people-arrows fa-2x m-2"></i><strong>Maintain a safe distance</strong> of atleast 2 metres (6 feet) from anyone who is coughing or sneezing.</li>
+                    <li class="list-group-item"><i class="fas fa-head-side-mask fa-2x m-2"></i>Everyone should <strong>wear a cloth face covering</strong> when they have to go out in public.</li>
+                    <li class="list-group-item"><i class="fas fa-head-side-cough-slash fa-2x m-2"></i><strong>Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.</strong></li>
+                    <li class="list-group-item"><i class="fas fa-pump-medical fa-2x m-2"></i>Regularly <strong>clean and disinfect</strong> surfaces and common objects at home.</li>
+                    <li class="list-group-item"><i class="fas fa-bed fa-2x m-2"></i><strong>Stay home if you feel unwell.</strong></li>
+                    <li class="list-group-item"><i class="fas fa-user-md fa-2x m-2"></i>If you have a fever, cough and difficulty breathing, <strong>seek medical attention</strong>. Call in advance.</li>
+                    <li class="list-group-item"><i class="fas fa-gavel fa-2x m-2"></i>Follow the directions of your local health authority.</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+
+        <!--Treatment Section-->
+        <div id="treatment">
+            <h2>Treatment<span class="display-button3">+</span></h2>
+            <div id = "covid-treatment" class="display-hide">
+                <p>To date, there are no specific vaccines or medicines for COVID-19. Treatments are under investigation, and will be tested through clinical trials</p>
+                <h3>Self care</h3>
+                <p>If you feel sick you should rest, drink plenty of fluid, and eat nutritious food. Stay in a separate room from other family members, and use a dedicated bathroom if possible. Clean and disinfect frequently touched surfaces.</p> 
+                <p>Everyone should keep a healthy lifestyle at home. Maintain a healthy diet, sleep, stay active, and make social contact with loved ones through the phone or internet. Children need extra love and attention from adults during difficult times. Keep to regular routines and schedules as much as possible.</p>
+                <p>It is normal to feel sad, stressed, or confused during a crisis. Talking to people you trust, such as friends and family, can help. If you feel overwhelmed, talk to a health worker or counsellor.</p>
+                <h3>Medical treatments</h3>
+                <p>If you have mild symptoms and are otherwise healthy, self-isolate and contact your medical provider or a COVID-19 information line for advice.</p>
+                <p>Seek medical care if you have a fever, a cough, and difficulty breathing. Call in advance.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<%- include('partials/footer'); -%>

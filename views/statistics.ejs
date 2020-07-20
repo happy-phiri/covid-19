@@ -1,0 +1,317 @@
+<%- include('partials/header'); -%>
+
+<!-- Country Search Box -->
+
+<section class="container">
+    <div class="search-form">
+        <form action="/statistics" method="post">
+            <div class="form">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="searchCountry" placeholder="Search for your country" autocomplete="off" spellcheck="false">
+                </div>
+                    <button class="btn btn-outline-primary btn-lg" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Javascript Code for date -->
+
+<% let options = {year: 'numeric', month: 'long', day: 'numeric'}; %> 
+<% let today  = new Date(); %> 
+<% let date = today.toLocaleDateString("en-US", options); %>
+
+<!--Continent Statistics Tables-->
+
+<section class="container">
+    <div class="stats-header">
+        <h1>Latest Coronavirus Statistics <br> <%= date %></h1>
+    </div>
+    <div class="global-stats">
+
+        <!--Asia Covid Data-->
+
+        <table style="grid-area: asia;">
+            <thead>
+                <tr>
+                    <th colspan="2" style="text-align: center;"><h2><%= continentCovidData[0].continent %></h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Cases Today</p>
+                        <p><%= continentCovidData[0].todayCases.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Cases</p>
+                        <p><%= continentCovidData[0].cases.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Deaths Today</p>
+                        <p><%= continentCovidData[0].todayDeaths.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Deaths</p>
+                        <p><%= continentCovidData[0].deaths.toLocaleString() %></p>  
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Recoveries Today</p>
+                        <p><%= continentCovidData[0].todayRecovered.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Recoveries</p>
+                        <p><%= continentCovidData[0].recovered.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>Active Cases</p>
+                        <p><%= continentCovidData[0].active.toLocaleString() %></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--North America Covid Data-->
+        <table style="grid-area: n-america;">
+            <thead>
+                <tr>
+                    <th colspan="2"><h2><%= continentCovidData[1].continent %></h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Cases Today</p>
+                        <p><%= continentCovidData[1].todayCases.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Cases</p>
+                        <p><%= continentCovidData[1].cases.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Deaths Today</p>
+                        <p><%= continentCovidData[1].todayDeaths.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Deaths</p>
+                        <p><%= continentCovidData[1].deaths.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Recoveries Today</p>
+                        <p><%= continentCovidData[1].todayRecovered.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Recoveries</p>
+                        <p><%= continentCovidData[1].recovered.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>Active Cases</p>
+                        <p><%= continentCovidData[1].active.toLocaleString() %></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--South America Covid Data-->
+        <table style="grid-area: s-america;">
+            <thead>
+                <tr>
+                    <th colspan="2"><h2><%= continentCovidData[2].continent %></h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Cases Today</p>
+                        <p><%= continentCovidData[2].todayCases.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Cases</p>
+                        <p><%= continentCovidData[2].cases.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Deaths Today</p>
+                        <p><%= continentCovidData[2].todayDeaths.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Deaths</p>
+                        <p><%= continentCovidData[2].deaths.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Recoveries Today</p>
+                        <p><%= continentCovidData[2].todayRecovered.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Recoveries</p>
+                        <p><%= continentCovidData[2].recovered.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>Active Cases</p>
+                        <p><%= continentCovidData[2].active.toLocaleString() %></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Europe Covid data-->
+        <table style="grid-area: europe;">
+            <thead>
+                <tr>
+                    <th colspan="2"><h2><%= continentCovidData[3].continent %></h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Cases Today</p>
+                        <p><%= continentCovidData[3].todayCases.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Cases</p>
+                        <p><%= continentCovidData[3].cases.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Deaths Today</p>
+                        <p><%= continentCovidData[3].todayDeaths.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Deaths</p>
+                        <p><%= continentCovidData[3].deaths.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Recoveries Today</p>
+                        <p><%= continentCovidData[3].todayRecovered.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Recoveries</p>
+                        <p><%= continentCovidData[3].recovered.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>Active Cases</p>
+                        <p><%= continentCovidData[3].active.toLocaleString() %></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Africa Covid data-->
+        <table style="grid-area: africa;">
+            <thead>
+                <tr>
+                    <th colspan="2"><h2><%= continentCovidData[4].continent %></h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Cases Today</p>
+                        <p><%= continentCovidData[4].todayCases.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Cases</p>
+                        <p><%= continentCovidData[4].cases.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Deaths Today</p>
+                        <p><%= continentCovidData[4].todayDeaths.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Deaths</p>
+                        <p><%= continentCovidData[4].deaths.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Recoveries Today</p>
+                        <p><%= continentCovidData[4].todayRecovered.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Recoveries</p>
+                        <p><%= continentCovidData[4].recovered.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>Active Cases</p>
+                        <p><%= continentCovidData[4].active.toLocaleString() %></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Australia/Oceania Covid data-->
+        <table style="grid-area: oceania;">
+            <thead>
+                <tr>
+                    <th colspan="2"><h2><%= continentCovidData[5].continent %></h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Cases Today</p>
+                        <p><%= continentCovidData[5].todayCases.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Cases</p>
+                        <p><%= continentCovidData[5].cases.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Deaths Today</p>
+                        <p><%= continentCovidData[5].todayDeaths.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Deaths</p>
+                        <p><%= continentCovidData[5].deaths.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Recoveries Today</p>
+                        <p><%= continentCovidData[5].todayRecovered.toLocaleString() %></p>
+                    </td>
+                    <td>
+                        <p>Total Recoveries</p>
+                        <p><%= continentCovidData[5].recovered.toLocaleString() %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>Active Cases</p>
+                        <p><%= continentCovidData[5].active.toLocaleString() %></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<%- include('partials/footer'); -%>
