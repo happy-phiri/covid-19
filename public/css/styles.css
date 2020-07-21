@@ -97,6 +97,10 @@ nav {
 
 }
 
+/* About Covid Page  */
+.about-covid {
+    padding-bottom: 1.5rem;
+}
 
 .covid-overview {
    display: grid;
@@ -415,13 +419,13 @@ table h2 {
 /* Footer  */
 footer {
     background-color: rgba(0, 0, 0, 0.2);
-    margin-bottom: -10.55rem;
+    margin-bottom: -8.55rem;
     padding: 1rem 0 0.5rem;
     text-align: center;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 9rem;
+    height: 8.55rem;
 }
 
 footer p {
