@@ -238,17 +238,48 @@ span:hover{
     margin: 1rem 0;
 }
 
+/* World Stats  */
+.world-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 0.75fr);
+    grid-gap: 10px;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+}
+
+@media(max-width: 576px){
+    .world-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 140px);
+        grid-template-rows: repeat(2, 0.75fr);
+        grid-gap: 5px;
+        margin: 0 auto;
+        width: fit-content;
+        text-align: center;
+    }
+}
+
+
 .stats-header {
     text-align: center;
-    padding: 1.2rem;
+    padding: 0.5rem;
 }
 
 .stats-header h1 {
     font-size: 2rem;
+    padding-bottom: 1rem;
 }
 
-.stats-header h2 {
+.stats-header h2, .continent-stats-header h2 {
     font-size: 1.5rem;
+}
+
+.continent-stats-header {
+    padding-top: 2rem;
+    padding-bottom: 0;
+    text-align: center;
 }
 
 .global-stats {
@@ -301,6 +332,9 @@ span:hover{
         ;
         grid-gap: 10px;
     }
+    .stats-header h1 {
+        font-size: 1.5rem;
+    }
 
 }
 
@@ -311,7 +345,7 @@ table {
     margin: 0 auto;
 }
 
-th, td {
+th, td, .world-stats div {
     background-color: rgba(0, 0, 0, 0.07);
     padding: 0.5rem;
 }
@@ -321,7 +355,7 @@ th {
 }
 
 
-table p {
+table p, .world-stats p {
     font-size: small;
     line-height: 1.0;
 }
@@ -434,13 +468,13 @@ table h2 {
 /* Footer  */
 footer {
     background-color: rgba(0, 0, 0, 0.2);
-    margin-bottom: -8.55rem;
+    margin-bottom: -9.55rem;
     padding: 1rem 0 0.5rem;
     text-align: center;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 8.55rem;
+    height: 9.55rem;
 }
 
 footer p {

@@ -17,7 +17,7 @@
 
 <!-- Javascript Code for date -->
 
-<% let options = {year: 'numeric', month: 'long', day: 'numeric'}; %> 
+<% let options = {year: 'numeric', month: 'short', day: 'numeric'}; %> 
 <% let today  = new Date(); %> 
 <% let date = today.toLocaleDateString("en-US", options); %>
 
@@ -25,10 +25,38 @@
 
 <section class="container">
     <div class="stats-header">
-        <h1>Latest Statistics</h1>
-        <h2><%= date %></h2>
+            <h1>Covid-19 Cases <%= date %></h1>
+        <div>
+            <h2>World Statistics</h2>
+            <div class="world-stats">
+                <div>
+                    <p>Cases Today</p>
+                    <p><%= (continentCovidData[0].todayCases + continentCovidData[1].todayCases + continentCovidData[2].todayCases + continentCovidData[3].todayCases + continentCovidData[4].todayCases + continentCovidData[5].todayCases).toLocaleString() %> </p>
+                </div>
+
+                <div>
+                    <p>Deaths Today</p>
+                    <p><%= (continentCovidData[0].todayDeaths + continentCovidData[1].todayDeaths + continentCovidData[2].todayDeaths + continentCovidData[3].todayDeaths + continentCovidData[4].todayDeaths + continentCovidData[5].todayDeaths).toLocaleString() %> </p>
+                </div>
+                
+                <div>
+                    <p>Total Cases</p>
+                    <p><%= (continentCovidData[0].cases + continentCovidData[1].cases + continentCovidData[2].cases + continentCovidData[3].cases + continentCovidData[4].cases + continentCovidData[5].cases).toLocaleString() %></p>
+                </div>
+
+                <div>
+                    <p>Total Deaths</p>
+                    <p><%= (continentCovidData[0].deaths + continentCovidData[1].deaths + continentCovidData[2].deaths + continentCovidData[3].deaths + continentCovidData[4].deaths + continentCovidData[5].deaths).toLocaleString() %> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="continent-stats-header">
+        <h2>World Continents Statistics</h2>
     </div>
     <div class="global-stats">
+        
 
         <!--Asia Covid Data-->
 
