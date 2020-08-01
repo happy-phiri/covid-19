@@ -1,0 +1,2 @@
+This is a website that provides information about covid-19. It briefly explains what covid-19 is, what the symptoms are, how we can prevent it and treatment. It also provides latest covid-19 stats.
+I built this website using node js and used ejs as the templating engine. I`ll continue making changes and improving it as best as i can.
