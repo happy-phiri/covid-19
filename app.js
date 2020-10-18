@@ -13,18 +13,18 @@ app.use(express.static("public"));
 
 //Variables for the country search
 
-let countrySearched = "";
-let totalCases = "";
-let totalDeaths = "";
-let countryFlag = "";
-let casesToday = "";
-let deathsToday = "";
-let recoveredToday = "";
-let totalRecovered = "";
-let activeCases = "";
-let criticalCases = "";
-let totalTests = "";
-let population = "";
+let countrySearched 
+let totalCases
+let totalDeaths 
+let countryFlag 
+let casesToday 
+let deathsToday 
+let recoveredToday 
+let totalRecovered 
+let activeCases 
+let criticalCases 
+let totalTests 
+let population 
 
 app.get("/", function(req, res){
     res.render("home");
@@ -68,15 +68,26 @@ app.get("/statistics", function(req, res){
 
 app.post("/statistics", function(req, res){
     countrySearched = _.upperCase(req.body.searchCountry);
-    const url = "https://corona.lmao.ninja/v2/countries/" + countrySearched +"?yesterday&strict&query%20";
+    const url = 'https://corona.lmao.ninja/v2/countries/' + countrySearched +'?yesterday&strict&query%20';
 
     https.get(url, function(response){
-        response.on("data", function(data){
+        let data;
+        response.on("data", function(chunk){
             console.log(response.statusCode);
-
+            
+            if (!data) {
+                data = chunk;
+              } else {
+                data += chunk;
+              }
+        }); 
+            
+        response.on("end", function() {
+            const countryCovidData =JSON.parse(data);
+    
             if(response.statusCode != 404){
 
-                const countryCovidData = JSON.parse(data);
+                //const countryCovidData = JSON.parse(data);
                 totalCases = countryCovidData.cases.toLocaleString();
                 countryFlag = countryCovidData.countryInfo.flag;
                 casesToday = countryCovidData.todayCases.toLocaleString();
@@ -92,8 +103,7 @@ app.post("/statistics", function(req, res){
 
             } else {
                 res.redirect("/fail");
-            }
-               
+            }      
         });
     });
 });
